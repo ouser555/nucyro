@@ -40,6 +40,11 @@
         "shortName": "CPI"
       },
       {
+        "name": "GAMING",
+        "title": "GAMING SW",
+        "shortName": "GSW"
+      },
+      {
         "name": "EXTRA01",
         "title": "EXTRA01 key",
         "shortName": "EXT01"
@@ -58,7 +63,7 @@
         "name": "PITCH_B",
         "title": "pitch -",
         "shortName": "PITCH-"
-      }
+      }      
     ],
     "layouts": {
         "keymap": [
