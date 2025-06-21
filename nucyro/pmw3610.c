@@ -62,6 +62,8 @@ void pmw3610_init(void) {
 
         pmw3610_write_reg(REG_PERFORMANCE, 0xFD);
 
+        pmw3610_write_reg(REG_SPI_CLK_ON_REQ, SPI_CLOCK_CMD_DISABLE);
+
         //pmw3610_write_reg(REG_RES_STEP, PMW361_CPI_400); // 3200/200=16=0x10
         pmw3610_set_cpi(PMW361_CPI_800);
         //pmw3610_set_cpi(PMW361_CPI_3200);
@@ -83,7 +85,7 @@ void pmw3610_init(void) {
         pmw3610_write_reg(0x36, 0xFF);
         pmw3610_write_reg(0x37, 0xFF);
         */
-        pmw3610_write_reg(REG_SPI_CLK_ON_REQ, SPI_CLOCK_CMD_DISABLE);
+        //pmw3610_write_reg(REG_SPI_CLK_ON_REQ, SPI_CLOCK_CMD_DISABLE);
 
         pmw3610_read_burst();
 
@@ -284,9 +286,15 @@ void pmw3610_set_cpi(uint16_t cpi) {
     //uint8_t cpival = constrain((cpi / PMW3610_CPI_STEP) - 1U, 0, (PMW3610_CPI_MAX / PMW3610_CPI_STEP) - 1U);
     // Fifth bit is probably a control bit.
     // PMW3320 datasheet don't have any info on this, so this is a pure guess.
+
+    pmw3610_write_reg(REG_SPI_CLK_ON_REQ, SPI_CLOCK_CMD_ENABLE);
+
     pmw3610_write_reg(REG_SPI_PAGE0, 0xFF);
     pmw3610_write_reg(REG_RES_STEP, cpi);
     pmw3610_write_reg(REG_SPI_PAGE0, 0x00);
+
+    pmw3610_write_reg(REG_SPI_CLK_ON_REQ, SPI_CLOCK_CMD_DISABLE);
+
 }
 #endif
 bool pmw3610_check_signature(void) {

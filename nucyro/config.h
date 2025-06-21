@@ -17,6 +17,7 @@
 
 #pragma once
 
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
 //#define SOLENOID_PIN GP19
 //#define SOLENOID_PIN_ACTIVE_LOW

@@ -25,8 +25,8 @@ enum layers {
     _LOWER,
     _RAISE,
     _ADJUST,
-    _MEDIA,
-    _GAMING    
+    _GAMING,
+    _MEDIA
 };
 
 enum custom_keycodes {
@@ -43,8 +43,7 @@ enum custom_keycodes {
   ADJUST,
   JOYMODE,
   JOYMODE2,
-  CPI,
-  GAMING
+  CPI
 };
 
 enum jmodes {
@@ -66,8 +65,7 @@ enum cpis {
     _GEAR4
 };
 
-const uint16_t CPIn[]={ PMW361_CPI_400, PMW361_CPI_800, PMW361_CPI_1600, PMW361_CPI_3200};  //pmw3610
-//const uint16_t CPIn[]={ 1, 2, 3, 4};  //pmw3610
+const uint16_t CPIn[]={ 1, 2, 3, 4};  //pmw3610
 //const uint16_t CPIn[]={ 125, 500, 1000, 1375}; //adns5050
 
 typedef union {
@@ -84,7 +82,6 @@ user_config_t user_config;
 uint8_t jMode=0;
 uint8_t jMode2=1;
 uint8_t nCPI;
-bool f_gaming = 0;
 
 void joysitck_mode_INC(void) {
   if(jMode == _3DPAN) {
@@ -139,90 +136,90 @@ void PMW3610_CPI_INC(void){
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_vertical_5x6(
   //,-----------------------------------------------------.
-        KC_WFWD,KC_WBAK,GAMING, KC_3,   KC_P8,   KC_UP,
+        KC_0,   KC_1,   KC_2,   KC_3,   KC_4,   KC_5,
   //|--------+--------+--------+--------+--------+--------|
-        KC_TRNS,MS_BTN1,KC_ENT, KC_ESC, KC_P4,   KC_LEFT,
+        KC_6,   KC_7,   KC_8,   KC_9,   KC_A,   KC_B,
   //|--------+--------+--------+--------+--------+--------|
-        MS_BTN3,MS_BTN2,KC_BSPC,C(KC_S),KC_P6,   KC_RIGHT,
+        KC_C,   KC_D,   KC_E,   KC_F,   KC_G,   KC_H,
   //|--------+--------+--------+--------+--------+--------|
-        C(KC_C),C(KC_V),C(KC_X),KC_L,   KC_P2,   KC_DOWN,
+        KC_I,   KC_J,   KC_K,   KC_L,   KC_M,   KC_N,
   //|--------+--------+--------+--------+--------+--------|
-        KC_TRNS,KC_TRNS,KC_BSPC,KC_TAB, MS_WHLU,MS_WHLD
+        KC_O,   KC_P,   KC_Q,   KC_R,   KC_S,   KC_T
   //|--------+--------+--------+--------+--------+--------|
   //|--------+--------+--------+--------+--------+--------|
   ),
 
   [_LOWER] = LAYOUT_vertical_5x6(
   //,-----------------------------------------------------.
-        KC_WFWD,KC_WBAK,GAMING, KC_3,   KC_P8,   KC_UP,
+        KC_0,   KC_1,   KC_2,   KC_3,   KC_4,   KC_5,
   //|--------+--------+--------+--------+--------+--------|
-        KC_TRNS,MS_BTN1,KC_ENT, KC_ESC, KC_P4,   KC_LEFT,
+        KC_6,   KC_7,   KC_8,   KC_9,   KC_A,   KC_B,
   //|--------+--------+--------+--------+--------+--------|
-        MS_BTN3,MS_BTN2,KC_BSPC,C(KC_S),KC_P6,   KC_RIGHT,
+        KC_C,   KC_D,   KC_E,   KC_F,   KC_G,   KC_H,
   //|--------+--------+--------+--------+--------+--------|
-        C(KC_C),C(KC_V),C(KC_X),KC_L,   KC_P2,   KC_DOWN,
+        KC_I,   KC_J,   KC_K,   KC_L,   KC_M,   KC_N,
   //|--------+--------+--------+--------+--------+--------|
-        KC_TRNS,KC_TRNS,KC_BSPC,KC_TAB, MS_WHLU,MS_WHLD
+        KC_O,   KC_P,   KC_Q,   KC_R,   KC_S,   KC_T
   //|--------+--------+--------+--------+--------+--------|
   //|--------+--------+--------+--------+--------+--------|
   ),
 
   [_RAISE] = LAYOUT_vertical_5x6(
   //,-----------------------------------------------------.
-        KC_WFWD,KC_WBAK,GAMING, KC_3,   KC_P8,   KC_UP,
+        KC_0,   KC_1,   KC_2,   KC_3,   KC_4,   KC_5,
   //|--------+--------+--------+--------+--------+--------|
-        KC_TRNS,MS_BTN1,KC_ENT, KC_ESC, KC_P4,   KC_LEFT,
+        KC_6,   KC_7,   KC_8,   KC_9,   KC_A,   KC_B,
   //|--------+--------+--------+--------+--------+--------|
-        MS_BTN3,MS_BTN2,KC_BSPC,C(KC_S),KC_P6,   KC_RIGHT,
+        KC_C,   KC_D,   KC_E,   KC_F,   KC_G,   KC_H,
   //|--------+--------+--------+--------+--------+--------|
-        C(KC_C),C(KC_V),C(KC_X),KC_L,   KC_P2,   KC_DOWN,
+        KC_I,   KC_J,   KC_K,   KC_L,   KC_M,   KC_N,
   //|--------+--------+--------+--------+--------+--------|
-        KC_TRNS,KC_TRNS,KC_BSPC,KC_TAB, MS_WHLU,MS_WHLD
+        KC_O,   KC_P,   KC_Q,   KC_R,   KC_S,   KC_T
   //|--------+--------+--------+--------+--------+--------|
   //|--------+--------+--------+--------+--------+--------|
   ),
 
   [_ADJUST] = LAYOUT_vertical_5x6(
   //,-----------------------------------------------------.
-        KC_WFWD,KC_WBAK,GAMING, KC_3,   KC_P8,   KC_UP,
+        KC_0,   KC_1,   KC_2,   KC_3,   KC_4,   KC_5,
   //|--------+--------+--------+--------+--------+--------|
-        KC_TRNS,MS_BTN1,KC_ENT, KC_ESC, KC_P4,   KC_LEFT,
+        KC_6,   KC_7,   KC_8,   KC_9,   KC_A,   KC_B,
   //|--------+--------+--------+--------+--------+--------|
-        MS_BTN3,MS_BTN2,KC_BSPC,C(KC_S),KC_P6,   KC_RIGHT,
+        KC_C,   KC_D,   KC_E,   KC_F,   KC_G,   KC_H,
   //|--------+--------+--------+--------+--------+--------|
-        C(KC_C),C(KC_V),C(KC_X),KC_L,   KC_P2,   KC_DOWN,
+        KC_I,   KC_J,   KC_K,   KC_L,   KC_M,   KC_N,
   //|--------+--------+--------+--------+--------+--------|
-        KC_TRNS,KC_TRNS,KC_BSPC,KC_TAB, MS_WHLU,MS_WHLD
-  //|--------+--------+--------+--------+--------+--------|
-  //|--------+--------+--------+--------+--------+--------|
-  ),
-
-  [_MEDIA] = LAYOUT_vertical_5x6(
-  //,-----------------------------------------------------.
-        KC_WFWD,KC_WBAK,GAMING, KC_3,   KC_P8,   KC_UP,
-  //|--------+--------+--------+--------+--------+--------|
-        KC_TRNS,MS_BTN1,KC_ENT, KC_ESC, KC_P4,   KC_LEFT,
-  //|--------+--------+--------+--------+--------+--------|
-        MS_BTN3,MS_BTN2,KC_BSPC,C(KC_S),KC_P6,   KC_RIGHT,
-  //|--------+--------+--------+--------+--------+--------|
-        C(KC_C),C(KC_V),C(KC_X),KC_L,   KC_P2,   KC_DOWN,
-  //|--------+--------+--------+--------+--------+--------|
-        KC_TRNS,KC_TRNS,KC_BSPC,KC_TAB, MS_WHLU,MS_WHLD
+        KC_O,   KC_P,   KC_Q,   KC_R,   KC_S,   KC_T
   //|--------+--------+--------+--------+--------+--------|
   //|--------+--------+--------+--------+--------+--------|
   ),
 
-    [_GAMING] = LAYOUT_vertical_5x6(
+  [_GAMING] = LAYOUT_vertical_5x6(
   //,-----------------------------------------------------.
-        JS_0,   JS_1,   GAMING, JS_0,   KC_4,   KC_5,
+        JS_0,   JS_1,   KC_2,   KC_3,   KC_4,   KC_5,
   //|--------+--------+--------+--------+--------+--------|
-        KC_TRNS,JS_3,   JS_4,   JS_5,   KC_A,   KC_B,
+        KC_6,   JS_3,   JS_4,   JS_5,   KC_A,   KC_B,
   //|--------+--------+--------+--------+--------+--------|
         JS_6,   JS_7,   JS_8,   JS_9,   KC_G,   KC_H,
   //|--------+--------+--------+--------+--------+--------|
-        JS_10,  JS_11,  JS_12,  JS_13,  KC_M,   KC_N,
+        JS_10,  JS_11,  JS_12,  JS_13,   KC_M,   KC_N,
   //|--------+--------+--------+--------+--------+--------|
-      KC_TRNS,KC_TRNS,  JS_14,  JS_15,  MS_WHLU,MS_WHLD
+        KC_O,   KC_P,   JS_14,  JS_15,   KC_S,   KC_T
+  //|--------+--------+--------+--------+--------+--------|
+  //|--------+--------+--------+--------+--------+--------|
+  ),
+
+    [_MEDIA] = LAYOUT_vertical_5x6(
+  //,-----------------------------------------------------.
+        JS_0,   JS_1,   KC_2,   KC_3,   KC_4,   KC_5,
+  //|--------+--------+--------+--------+--------+--------|
+        KC_6,   JS_3,   JS_4,   JS_5,   KC_A,   KC_B,
+  //|--------+--------+--------+--------+--------+--------|
+        JS_6,   JS_7,   JS_8,   JS_9,   KC_G,   KC_H,
+  //|--------+--------+--------+--------+--------+--------|
+        JS_10,  JS_11,  JS_12,  JS_13,   KC_M,   KC_N,
+  //|--------+--------+--------+--------+--------+--------|
+        KC_O,   KC_P,   JS_14,  JS_15,   KC_S,   KC_T
   //|--------+--------+--------+--------+--------+--------|
   //|--------+--------+--------+--------+--------+--------|
   ),
@@ -290,25 +287,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         user_config.nCPI = nCPI;
         eeconfig_update_user(user_config.raw);
         pointing_device_driver_set_cpi(CPIn[nCPI]);
-      }
-      return false;
-
-
-    case GAMING:
-      if (record->event.pressed) {
-
-        if(f_gaming){
-          f_gaming = false;
-          layer_off(_GAMING);
-          jMode  = user_config.jMode;
-          //jMode2 = user_config.jMode2;
-        }else{
-          f_gaming = true;
-          layer_on(_GAMING);
-          jMode = _JOYSL;
-          //jMode2 = _JOYSR;
-        }
-
       }
       return false;
   }
@@ -1098,20 +1076,20 @@ bool oled_task_user(void) {
 #if 1
 void eeconfig_init_user(void) {  // EEPROM is getting reset!
 
-  bool conf_change_f = false;
+  bool dpi_change_f = false;
   user_config.raw = 0;
 
 
   user_config.raw = eeconfig_read_user();
   if(user_config.jMode > _3DPAN || user_config.jMode < 0 ){
     user_config.jMode = _UWASD;
-    conf_change_f = true;
+    dpi_change_f = true;
   }
   //jMode = user_config.jMode;
 
   if(user_config.jMode2 > _3DPAN || user_config.jMode2 < 0){
     user_config.jMode2 = _UWASD;
-    conf_change_f = true;
+    dpi_change_f = true;
   }
 
   if(user_config.jMode == user_config.jMode2)
@@ -1119,21 +1097,24 @@ void eeconfig_init_user(void) {  // EEPROM is getting reset!
     if(user_config.jMode2 >= _WASD)
     user_config.jMode2 = _UWASD;
     //user_config.jMode2++;
-    conf_change_f = true;
+    dpi_change_f = true;
   }
   //jMode2 = user_config.jMode2;
 
   if((user_config.nCPI > 3) || (user_config.nCPI < 0) ){
-    user_config.nCPI = 1;
-    nCPI = 1;
-    conf_change_f = true;
+    user_config.nCPI = _GEAR1;
+    dpi_change_f = true;
   }
   //nCPI = user_config.nCPI;
 
-  if(conf_change_f){
-    eeconfig_update_user(user_config.raw); // Write default value to EEPROM now    
+  if(dpi_change_f){
+    eeconfig_update_user(user_config.raw); // Write default value to EEPROM now
+    pointing_device_driver_set_cpi(CPIn[nCPI]);
   }
-  pointing_device_driver_set_cpi(CPIn[nCPI]);
+  user_config.nCPI = _GEAR3;
+  eeconfig_update_user(user_config.raw); // Write default value to EEPROM now
+  pointing_device_driver_set_cpi(CPIn[2]);
+  //pointing_device_driver_set_cpi(1000); //adns5050
 
 }
 #endif
