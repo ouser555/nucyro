@@ -1,4 +1,4 @@
-# nucyro_normal
-nucyro_normal
+# nucyro
+nucyro
 
 make nucyro:via
